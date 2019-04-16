@@ -8,7 +8,13 @@ describe "#happy_birthday" do
       "Amanda" => 27
     }
 
-    expect{happy_birthday(birthday_kids)}.to output("Happy Birthday Timmy! You are now 9 years old!\nHappy Birthday Sarah! You are now 6 years old!\nHappy Birthday Amanda! You are now 27 years old!\n").to_stdout
+    def age_appropriate_birthday(birthday_kid)
+      birthday_kids.each do |kids_name, age|
+        if age<12
+        puts "Happy Birthday #{kids_name}! You are now #{age} years old!"
+      end
+    end
+    #expect{happy_birthday(birthday_kids)}.to output("Happy Birthday Timmy! You are now 9 years old!\nHappy Birthday Sarah! You are now 6 years old!\nHappy Birthday Amanda! You are now 27 years old!\n").to_stdout
 
   end
 end
